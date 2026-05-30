@@ -1,0 +1,18 @@
+# Rust build artifacts
+target/
+**/*.rs.bk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Config (contains API keys, don't commit)
+config.json
+*.local.*
