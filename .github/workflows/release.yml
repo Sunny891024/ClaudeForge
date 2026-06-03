@@ -99,9 +99,16 @@ jobs:
           NOTES
 
           if gh release view "$TAG" >/dev/null 2>&1; then
-            gh release upload "$TAG" dist/* --clobber
+            gh release upload "$TAG" \
+              "dist/ClaudeForge-${VERSION}-macOS.dmg" \
+              "dist/ClaudeForge-${VERSION}-macOS.zip" \
+              dist/checksums.txt \
+              --clobber
           else
-            gh release create "$TAG" dist/* \
+            gh release create "$TAG" \
+              "dist/ClaudeForge-${VERSION}-macOS.dmg" \
+              "dist/ClaudeForge-${VERSION}-macOS.zip" \
+              dist/checksums.txt \
               --title "ClaudeForge ${VERSION}" \
               --notes-file release-notes.md
           fi
